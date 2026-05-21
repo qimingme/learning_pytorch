@@ -2,19 +2,14 @@ from pathlib import Path
 
 import torch
 
-# 这个文件集中管理项目配置。
-# 新手项目里最容易把路径、批量大小、学习率散落到各个脚本中；
-# 集中放在这里，后续调参或换数据集时只需要改一个地方。
 DATA_DIR: Path = Path("../data")
 CHECKPOINT_DIR: Path = Path("../checkpoints")
-MODEL_PATH: Path = CHECKPOINT_DIR / "lenet_fashion_mnist.pth"
+MODEL_PATH: Path = CHECKPOINT_DIR / "alexnet_fashion_mnist.pth"
 
 # FashionMNIST 是 28x28 的灰度图，一共有 10 个类别。
-IMAGE_SIZE: int = 28
+IMAGE_SIZE: int = 227
 NUM_CLASSES: int = 10
 
-# 训练相关的超参数。
-# 它们不是固定答案，而是一个适合 LeNet 入门实验的起点。
 NUM_EPOCHS: int = 20
 TRAIN_BATCH_SIZE: int = 32
 EVAL_BATCH_SIZE: int = 256
